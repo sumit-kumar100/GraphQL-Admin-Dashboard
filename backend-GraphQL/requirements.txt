@@ -8,14 +8,14 @@ dnspython==2.2.1
 graphene==2.1.9
 graphene-django==2.15.0
 graphene-file-upload==1.3.0
-graphene-mongo==0.2.14
+graphene-mongo==0.2.13
 graphql-core==2.3.2
 graphql-relay==2.0.1
 iso8601==1.0.2
 mongoengine==0.24.1
 Pillow==9.1.0
 promise==2.3
-PyJWT==2.3.0
+PyJWT==2.4.0
 pymongo==4.1.1
 python-decouple==3.6
 Rx==1.6.1
