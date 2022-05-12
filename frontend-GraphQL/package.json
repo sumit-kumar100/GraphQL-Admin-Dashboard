@@ -1,0 +1,37 @@
+{
+  "name": "mongostore",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.10",
+    "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.8.1",
+    "@hookform/resolvers": "^2.8.8",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.2",
+    "@reduxjs/toolkit": "^1.8.1",
+    "apollo-upload-client": "^17.0.0",
+    "graphql": "^16.3.0",
+    "js-cookie": "^3.0.1",
+    "material-ui-phone-number": "^3.0.0",
+    "next": "12",
+    "react": "18.0.0",
+    "react-data-table-component": "^7.5.0",
+    "react-dom": "18.0.0",
+    "react-hook-form": "^7.30.0",
+    "react-redux": "^8.0.1",
+    "react-toastify": "^8.2.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5"
+  }
+}

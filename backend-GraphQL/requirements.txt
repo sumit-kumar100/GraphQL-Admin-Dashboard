@@ -1,0 +1,4 @@
+Django
+mongoengine
+graphene-django
+graphene-mongo

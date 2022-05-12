@@ -1,0 +1,52 @@
+import { gql } from "@apollo/client";
+
+export const GET_ORDER = gql`
+query{
+  orders{
+    edges{
+      node{
+        id
+        userId
+        address{
+          id
+          houseNo
+          colony
+          landmark
+          pinCode
+          city
+          state
+          phoneNumber
+          alternateNumber
+        }
+        product {
+          id
+          title
+          brand
+          description
+          mrp
+          listPrice
+          cost
+          quantity
+          gstIncluded
+          colors
+          sizes
+          variants{
+            edges{
+              node{
+                color
+                size
+                listPrice
+                quantity
+              }
+            }
+          }
+          status
+        }
+        variant
+        quantity
+        orderStatus
+      }
+    }
+  }
+}
+`

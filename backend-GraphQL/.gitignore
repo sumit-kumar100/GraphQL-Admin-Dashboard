@@ -1,0 +1,5 @@
+# dependencies
+/myenv
+
+# local env files
+*.env
