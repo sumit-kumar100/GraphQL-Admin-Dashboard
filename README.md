@@ -8,8 +8,9 @@ GraphQL Admin Dashboard Using Python Django and Next.js
 
 <img src="frontend-GraphQL/public/dashboard9.png" width="800" height="450">
 
-<img src="static/css/Screenshot%202021-10-23%20at%2015-01-02%20classes%20on.png" width="500" height="250">
+<img src="frontend-GraphQL/public/dashboard2.png" width="800" height="450">
 
-<img src="static/css/Screenshot%202021-10-23%20at%2015-02-26%20classes%20on.png" width="500" height="250">
+<img src="frontend-GraphQL/public/dashboard3.png" width="800" height="450">
 
-<img src="static/css/Screenshot%202021-10-23%20at%2015-02-45%20classes%20on.png" width="500" height="250">
+<img src="frontend-GraphQL/public/dashboard4.png" width="800" height="450">
+
