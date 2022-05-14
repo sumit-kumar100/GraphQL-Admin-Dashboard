@@ -23,6 +23,7 @@
     "material-ui-phone-number": "^3.0.0",
     "next": "12",
     "react": "18.0.0",
+    "react-chartjs-2": "^4.1.0",
     "react-data-table-component": "^7.5.0",
     "react-dom": "18.0.0",
     "react-hook-form": "^7.30.0",

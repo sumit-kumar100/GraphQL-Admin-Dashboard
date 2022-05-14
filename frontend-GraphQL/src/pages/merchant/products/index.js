@@ -73,16 +73,22 @@ const Products = () => {
               </Button>
             </AccordionSummary>
             <AccordionDetails>
-              <ProductCard
-                state={state}
-                actions={actions}
-                edit={edit}
-                setEdit={setEdit}
-                setExpanded={setExpanded}
-                createProduct={createProduct}
-                updateProduct={updateProduct}
-                dispatch={dispatch}
-              />
+              {
+                expanded == 'panel1' ?
+                  <>
+                    <ProductCard
+                      state={state}
+                      actions={actions}
+                      edit={edit}
+                      setEdit={setEdit}
+                      setExpanded={setExpanded}
+                      createProduct={createProduct}
+                      updateProduct={updateProduct}
+                      dispatch={dispatch}
+                    />
+                  </>
+                  : (<></>)
+              }
             </AccordionDetails>
           </Accordion>
           <Accordion expanded={expanded === 'panel2'} onChange={toggle('panel2')}>

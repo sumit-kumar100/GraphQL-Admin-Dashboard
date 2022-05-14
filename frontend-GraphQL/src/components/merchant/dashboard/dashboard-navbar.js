@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { AppBar, Avatar, Box, Toolbar, Tooltip, IconButton } from '@mui/material';
-import LogoutIcon from '@mui/icons-material/Logout';
+import { AppBar, Box, Toolbar, IconButton, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
@@ -50,21 +49,16 @@ export const DashboardNavbar = (props) => {
               }
             }}
           >
-            <MenuIcon fontSize="large" />
+            <MenuIcon fontSize="small" />
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
-          <Tooltip title="Logout">
-            <Avatar
-              sx={{
-                height: 45,
-                width: 45,
-                cursor: 'pointer'
-              }}
-              onClick={handleLogout}
-            >
-              <LogoutIcon />
-            </Avatar>
-          </Tooltip>
+          <Button
+            variant="outlined"
+            onClick={handleLogout}
+            size="small"
+          >
+            Logout
+          </Button>
         </Toolbar>
       </DashboardNavbarRoot>
     </>

@@ -70,7 +70,7 @@ const Login = () => {
                                 height='100%'
                             />
                         </Box>
-                        <Box sx={{ width: { xs: '100%', md: '50%' }, padding: 7 }}>
+                        <Box sx={{ width: { xs: '100%', md: '50%' }, padding: { xs: 2, md: 7 } }}>
                             <Typography variant="h5" sx={{ letterSpacing: 1 }}>MERCHANT</Typography>
                             <TextField
                                 sx={{ mb: 3, mt: 3 }}

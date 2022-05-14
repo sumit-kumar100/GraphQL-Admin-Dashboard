@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { Box, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
+import { Box, Divider, Drawer, useMediaQuery } from '@mui/material';
 import { ChartBar as ChartBarIcon } from '../../../icons/chart-bar';
 import { Selector as SelectorIcon } from '../../../icons/selector';
 import { ShoppingBag as ShoppingBagIcon } from '../../../icons/shopping-bag';
-import { Users as UsersIcon } from '../../../icons/users';
 import { Logo } from './logo';
+import InventoryIcon from '@mui/icons-material/Inventory';
 import { NavItem } from './nav-item';
 
 const items = [
@@ -23,7 +23,7 @@ const items = [
   },
   {
     href: '/merchant/order',
-    icon: (<ShoppingBagIcon fontSize="small" />),
+    icon: (<InventoryIcon fontSize="small" />),
     title: 'Orders'
   }
 ];

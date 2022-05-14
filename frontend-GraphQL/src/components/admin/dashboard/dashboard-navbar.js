@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Tooltip } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import LogoutIcon from '@mui/icons-material/Logout';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 
 const DashboardNavbarRoot = styled(AppBar)(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: 'transparent',
   boxShadow: theme.shadows[3]
 }));
 
@@ -50,22 +49,16 @@ export const DashboardNavbar = (props) => {
               }
             }}
           >
-            <MenuIcon fontSize="large" />
+            <MenuIcon fontSize="small" />
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
-
-          <Tooltip title="Logout">
-            <Avatar
-              sx={{
-                height: 45,
-                width: 45,
-                cursor: 'pointer'
-              }}
-              onClick={handleLogout}
-            >
-              <LogoutIcon />
-            </Avatar>
-          </Tooltip>
+          <Button
+            variant="outlined"
+            onClick={handleLogout}
+            size="small"
+          >
+            Logout
+          </Button>
         </Toolbar>
       </DashboardNavbarRoot>
     </>

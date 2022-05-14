@@ -2,11 +2,15 @@ import { useEffect } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { Box, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
+import { Box, Divider, Drawer, useMediaQuery } from '@mui/material';
 import { ChartBar as ChartBarIcon } from '../../../icons/chart-bar';
 import { Selector as SelectorIcon } from '../../../icons/selector';
 import { ShoppingBag as ShoppingBagIcon } from '../../../icons/shopping-bag';
 import { Users as UsersIcon } from '../../../icons/users';
+import CategoryIcon from '@mui/icons-material/Category';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import InventoryIcon from '@mui/icons-material/Inventory';
 import { Logo } from './logo';
 import { NavItem } from './nav-item';
 
@@ -18,7 +22,7 @@ const items = [
   },
   {
     href: '/admin/category',
-    icon: (<ShoppingBagIcon fontSize="small" />),
+    icon: (<CategoryIcon fontSize="small" />),
     title: 'Category'
   },
   {
@@ -33,17 +37,17 @@ const items = [
   },
   {
     href: '/admin/cart',
-    icon: (<ShoppingBagIcon fontSize="small" />),
+    icon: (<ShoppingCartIcon fontSize="small" />),
     title: 'Cart'
   },
   {
     href: '/admin/address',
-    icon: (<ShoppingBagIcon fontSize="small" />),
+    icon: (<ContactMailIcon fontSize="small" />),
     title: 'Address'
   },
   {
     href: '/admin/order',
-    icon: (<ShoppingBagIcon fontSize="small" />),
+    icon: (<InventoryIcon fontSize="small" />),
     title: 'Orders'
   }
 ];

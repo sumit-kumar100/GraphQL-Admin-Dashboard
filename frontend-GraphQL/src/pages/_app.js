@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import 'react-toastify/dist/ReactToastify.css';
-import '../css/index.css'
+import '../css/index.css';
 import { ToastContainer } from 'react-toastify';
 import { createEmotionCache } from '../utils/create-emotion-cache';
 import { ApolloProvider } from '@apollo/client/react';
@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import { theme } from '../theme';
 import { client } from '../utils/apollo-client';
+
 
 
 const App = (props) => {
