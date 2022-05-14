@@ -4,15 +4,15 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout'
 import { toast } from 'react-toastify';
 import { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, Fragment } from 'react';
 import { Box, Container, Button } from '@mui/material';
-import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout';
 import ProductCard from '../../../components/admin/product/product-card';
 import ProductList from '../../../components/admin/product/prodcut-list'
 import { requireAuthentication } from '../../../utils/adminAuth';
-import { actions, getProduct, getSubList, createProduct, updateProduct, deleteProduct } from '../../../store/adminStore/product';
+import { actions, getProduct, getSubList, createProduct, updateProduct, deleteProduct } from '../../../store/adminStore/products';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -116,8 +116,7 @@ const Products = () => {
   )
 }
 
-
-export default Products;
+export default Products
 
 
 export const getServerSideProps = requireAuthentication((context) => {
