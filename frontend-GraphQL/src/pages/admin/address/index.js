@@ -12,7 +12,7 @@ import AddressCard from '../../../components/admin/address/address-card'
 import AddressList from '../../../components/admin/address/address-list'
 import { requireAuthentication } from '../../../utils/adminAuth';
 import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout';
-import { actions, getUsers, getAddress, createAddress, updateAddress, deleteAddress } from './store'
+import { actions, getUsers, getAddress, createAddress, updateAddress, deleteAddress } from '../../../store/adminStore/address'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -36,12 +36,12 @@ const Users = () => {
             toast.success(state.message)
             dispatch(actions.clearMessage())
         }
-    }, [state?.message])
+    }, [state?.message, dispatch])
 
     useEffect(() => {
         dispatch(getUsers())
         dispatch(getAddress())
-    }, []);
+    });
 
     return (
         <AdminDashboardLayout>

@@ -84,6 +84,7 @@ const AddressCard = ({ state, edit, setEdit, createAddress, updateAddress, dispa
             setExpanded('panel1')
             fetchDetail(edit)
         }
+        // eslint-disable-next-line
     }, [edit])
 
 

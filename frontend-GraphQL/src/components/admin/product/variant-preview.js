@@ -60,6 +60,7 @@ const Variant = ({ variants, actions, dispatch }) => {
                                         {variant.images.length ?
                                             <img
                                                 src={URL.createObjectURL(variant.images[0])}
+                                                alt="variant-thumbnail"
                                                 height={60}
                                                 width={50}
                                                 style={{ borderRadius: 10 }}

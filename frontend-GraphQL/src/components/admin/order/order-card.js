@@ -61,6 +61,7 @@ const OrderCard = ({ state, edit, setEdit, dispatch, setExpanded, createOrder, g
             setExpanded('panel1')
             fetchDetail(edit)
         }
+        // eslint-disable-next-line
     }, [edit])
 
 

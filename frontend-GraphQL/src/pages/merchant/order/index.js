@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import { Box, Container } from '@mui/material';
 import OrderList from '../../../components/merchant/order/order-list';
 import { requireAuthentication } from '../../../utils/merchantAuth';
-import { actions, getOrder, updateOrder, deleteOrder } from './store';
+import { actions, getOrder, updateOrder, deleteOrder } from '../../../store/merchantStore/order';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -46,11 +46,11 @@ const Orders = () => {
             toast.success(state.message)
             dispatch(actions.clearMessage())
         }
-    }, [state?.message])
+    }, [state?.message, dispatch])
 
     useEffect(() => {
         dispatch(getOrder())
-    }, []);
+    });
 
     return (
         <MerchantDashboardLayout>

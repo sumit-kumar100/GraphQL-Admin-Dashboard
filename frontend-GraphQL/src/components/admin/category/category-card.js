@@ -87,6 +87,7 @@ const CategoryCard = ({ state, edit, setEdit, deleteCategory, createCategory, up
         if (edit) {
             fetchDetail(edit)
         }
+        // eslint-disable-next-line
     }, [edit])
 
 

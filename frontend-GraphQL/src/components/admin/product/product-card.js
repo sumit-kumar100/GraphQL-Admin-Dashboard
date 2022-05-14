@@ -167,6 +167,7 @@ const ProductCard = ({ state, actions, createProduct, updateProduct, dispatch, e
       dispatch(actions.clearState())
       fetchDetail(edit)
     }
+    // eslint-disable-next-line
   }, [edit])
 
 

@@ -1,11 +1,11 @@
-import category from '../pages/admin/category/store';
-import users from '../pages/admin/users/store';
-import cart from '../pages/admin/cart/store';
-import address from '../pages/admin/address/store';
-import adminProducts from '../pages/admin/products/store';
-import adminOrders from '../pages/admin/order/store'
-import merchantProducts from '../pages/merchant/products/store';
-import merchantOrders from '../pages/merchant/order/store';
+import category from '../store/adminStore/category';
+import users from '../store/adminStore/users';
+import cart from '../store/adminStore/cart';
+import address from '../store/adminStore/address';
+import adminProducts from '../store/adminStore/product';
+import adminOrders from '../store/adminStore/order'
+import merchantProducts from '../store/merchantStore/products';
+import merchantOrders from '../store/merchantStore/order';
 
 const rootReducer = {
   category,

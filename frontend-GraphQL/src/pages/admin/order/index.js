@@ -11,7 +11,7 @@ import OrderCard from '../../../components/admin/order/order-card'
 import { Box, Container, Button } from '@mui/material';
 import { requireAuthentication } from '../../../utils/adminAuth';
 import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout';
-import { actions, getOrder, getOrderInfo, createOrder, updateOrder, deleteOrder,getAddress } from './store'
+import { actions, getOrder, getOrderInfo, createOrder, updateOrder, deleteOrder, getAddress } from '../../../store/adminStore/order'
 import OrderList from '../../../components/admin/order/order-list'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -36,12 +36,12 @@ const Users = () => {
             toast.success(state.message)
             dispatch(actions.clearMessage())
         }
-    }, [state?.message])
+    }, [state?.message, dispatch])
 
     useEffect(() => {
         dispatch(getOrderInfo())
         dispatch(getOrder())
-    }, []);
+    });
 
     return (
         <AdminDashboardLayout>

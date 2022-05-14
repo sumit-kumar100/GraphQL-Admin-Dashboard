@@ -48,15 +48,6 @@ const CartCard = ({ state, edit, setEdit, dispatch, setExpanded, createCart, upd
         setPending(false)
     }
 
-    useEffect(() => {
-        if (edit) {
-            reset({ ...defaultValues })
-            setExpanded('panel1')
-            fetchDetail(edit)
-        }
-    }, [edit])
-
-
     const fetchDetail = async (id) => {
         const response = await client.refetchQueries({ include: [{ query: GET_CART_BY_ID, variables: { id } }] })
         const { cartById } = { ...response[0]?.data }
@@ -87,6 +78,16 @@ const CartCard = ({ state, edit, setEdit, dispatch, setExpanded, createCart, upd
         })
         dispatch(actions.setVariant(reduxVariant))
     }
+
+
+    useEffect(() => {
+        if (edit) {
+            reset({ ...defaultValues })
+            setExpanded('panel1')
+            fetchDetail(edit)
+        }
+        // eslint-disable-next-line
+    }, [edit])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>

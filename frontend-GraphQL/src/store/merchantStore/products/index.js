@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { colors, sizes } from '../../../../constant'
-import { client } from '../../../../utils/apollo-client'
-import { GET_PRODUCTS } from '../../../../GraphQL/Queries/merchant/product'
-import { GET_SUBLIST } from '../../../../GraphQL/Queries/merchant/category'
-import { CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT } from '../../../../GraphQL/Mutations/merchant/product'
+import { colors, sizes } from '../../../constant'
+import { client } from '../../../utils/apollo-client'
+import { GET_PRODUCTS } from '../../../GraphQL/Queries/merchant/product'
+import { GET_SUBLIST } from '../../../GraphQL/Queries/merchant/category'
+import { CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT } from '../../../GraphQL/Mutations/merchant/product'
 
 export const getProduct = createAsyncThunk('products/getProduct', async (refetch = false, { getState, dispatch }) => {
     if (!refetch) {

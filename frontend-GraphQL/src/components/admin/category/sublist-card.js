@@ -88,6 +88,7 @@ const SubListCard = ({ state, edit, setEdit, deleteSubList, createSubList, updat
         if (edit) {
             fetchDetail(edit)
         }
+        // eslint-disable-next-line
     }, [edit])
 
 

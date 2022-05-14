@@ -12,7 +12,7 @@ import { Box, Container, Button } from '@mui/material';
 import ProductCard from '../../../components/merchant/product/product-card';
 import ProductList from '../../../components/merchant/product/prodcut-list'
 import { requireAuthentication } from '../../../utils/merchantAuth';
-import { actions, getProduct, getSubList, createProduct, updateProduct, deleteProduct } from './store';
+import { actions, getProduct, getSubList, createProduct, updateProduct, deleteProduct } from '../../../store/merchantStore/products';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -36,12 +36,12 @@ const Products = () => {
       toast.success(state.message)
       dispatch(actions.clearMessage())
     }
-  }, [state?.message])
+  }, [state?.message, dispatch])
 
   useEffect(() => {
     dispatch(getProduct())
     dispatch(getSubList())
-  }, []);
+  });
 
   return (
     <MerchantDashboardLayout>
@@ -115,6 +115,6 @@ export default Products
 
 export const getServerSideProps = requireAuthentication((context) => {
   return {
-      props: {}
+    props: {}
   }
 })

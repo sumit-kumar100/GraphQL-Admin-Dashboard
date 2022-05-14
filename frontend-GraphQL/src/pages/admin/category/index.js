@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout'
 import { toast } from 'react-toastify'
-import { useEffect, useState , Fragment} from 'react'
+import { useEffect, useState, Fragment } from 'react'
 import { requireAuthentication } from '../../../utils/adminAuth'
 import { Box, Container, Button } from '@mui/material'
 import CategoryCard from '../../../components/admin/category/category-card'
@@ -16,7 +16,7 @@ import {
     createCategory, updateCategory, deleteCategory,
     createSubCategory, updateSubCategory, deleteSubCategory,
     createSubList, updateSubList, deleteSubList
-} from './store'
+} from '../../../store/adminStore/category'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 
@@ -42,11 +42,11 @@ const Category = () => {
             toast.success(state.message)
             dispatch(actions.clearMessage())
         }
-    }, [state?.message])
+    }, [state?.message, dispatch])
 
     useEffect(() => {
         dispatch(getData())
-    }, [])
+    });
 
     return (
         <AdminDashboardLayout>

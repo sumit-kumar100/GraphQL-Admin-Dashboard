@@ -88,6 +88,7 @@ const SubCategoryCard = ({ state, edit, setEdit, deleteSubCategory, createSubCat
         if (edit) {
             fetchDetail(edit)
         }
+        // eslint-disable-next-line
     }, [edit])
 
 

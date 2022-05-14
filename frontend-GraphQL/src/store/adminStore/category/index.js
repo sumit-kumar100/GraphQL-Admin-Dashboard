@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { client } from '../../../../utils/apollo-client'
-import { GET_DATA } from '../../../../GraphQL/Queries/admin/category'
+import { client } from '../../../utils/apollo-client'
+import { GET_DATA } from '../../../GraphQL/Queries/admin/category'
 import {
     CREATE_CATEGORY, UPDATE_CATEGORY, DELETE_CATEGORY,
     CREATE_SUBCATEGORY, UPDATE_SUBCATEGORY, DELETE_SUBCATEGORY,
     CREATE_SUBLIST, UPDATE_SUBLIST, DELETE_SUBLIST,
-} from '../../../../GraphQL/Mutations/admin/category'
+} from '../../../GraphQL/Mutations/admin/category'
 
 export const getData = createAsyncThunk('category/getCategory', async (refetch = false, { dispatch }) => {
     if (!refetch) {

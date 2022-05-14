@@ -11,7 +11,7 @@ import CartCard from '../../../components/admin/cart/cart-card'
 import { Box, Container, Button } from '@mui/material';
 import { requireAuthentication } from '../../../utils/adminAuth';
 import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout';
-import { actions, getCart, getCartInfo, createCart, updateCart, deleteCart } from './store'
+import { actions, getCart, getCartInfo, createCart, updateCart, deleteCart } from '../../../store/adminStore/cart'
 import CartList from '../../../components/admin/cart/cart-list'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -36,12 +36,12 @@ const Users = () => {
             toast.success(state.message)
             dispatch(actions.clearMessage())
         }
-    }, [state?.message])
+    }, [state?.message, dispatch])
 
     useEffect(() => {
         dispatch(getCartInfo())
         dispatch(getCart())
-    }, []);
+    });
 
     return (
         <AdminDashboardLayout>

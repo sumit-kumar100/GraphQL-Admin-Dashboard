@@ -85,6 +85,7 @@ const UserCard = ({ state, edit, setEdit, createUser, updateUser, dispatch, setE
             setExpanded('panel1')
             fetchDetail(edit)
         }
+        // eslint-disable-next-line
     }, [edit])
 
 

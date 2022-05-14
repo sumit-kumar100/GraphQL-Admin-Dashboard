@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { client } from '../../../../utils/apollo-client'
-import { GET_USERS, GET_ADDRESS } from '../../../../GraphQL/Queries/admin/address'
-import { CREATE_ADDRESS, UPDATE_ADDRESS, DELETE_ADDRESS } from '../../../../GraphQL/Mutations/admin/address'
+import { client } from '../../../utils/apollo-client'
+import { GET_USERS, GET_ADDRESS } from '../../../GraphQL/Queries/admin/address'
+import { CREATE_ADDRESS, UPDATE_ADDRESS, DELETE_ADDRESS } from '../../../GraphQL/Mutations/admin/address'
 
 
 export const getUsers = createAsyncThunk('address/getUsers', async (_, { dispatch }) => {

@@ -12,7 +12,7 @@ import UserCard from '../../../components/admin/users/users-card'
 import UserList from '../../../components/admin/users/users-list'
 import { requireAuthentication } from '../../../utils/adminAuth';
 import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout';
-import { actions, getUsers, createUser, updateUser, deleteUser } from './store'
+import { actions, getUsers, createUser, updateUser, deleteUser } from '../../../store/adminStore/users'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -36,11 +36,11 @@ const Users = () => {
             toast.success(state.message)
             dispatch(actions.clearMessage())
         }
-    }, [state?.message])
+    }, [state?.message, dispatch])
 
     useEffect(() => {
         dispatch(getUsers())
-    }, []);
+    });
 
     return (
         <AdminDashboardLayout>

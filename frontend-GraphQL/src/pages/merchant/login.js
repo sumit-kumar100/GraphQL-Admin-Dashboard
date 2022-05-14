@@ -64,6 +64,7 @@ const Login = () => {
                         <Box sx={{ width: '50%', display: { xs: 'none', md: 'block' } }}>
                             <img
                                 style={{ borderRadius: '5px 0px 0px 5px' }}
+                                alt="Login Image"
                                 src='/login.svg'
                                 width='100%'
                                 height='100%'

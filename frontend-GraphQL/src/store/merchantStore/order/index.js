@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { client } from '../../../../utils/apollo-client'
-import { GET_ORDER } from '../../../../GraphQL/Queries/merchant/order'
-import { UPDATE_ORDER, DELETE_ORDER } from '../../../../GraphQL/Mutations/merchant/order'
+import { client } from '../../../utils/apollo-client'
+import { GET_ORDER } from '../../../GraphQL/Queries/merchant/order'
+import { UPDATE_ORDER, DELETE_ORDER } from '../../../GraphQL/Mutations/merchant/order'
 
 export const getOrder = createAsyncThunk('orders/getOrder', async (refetch = false, { dispatch }) => {
     if (!refetch) {
