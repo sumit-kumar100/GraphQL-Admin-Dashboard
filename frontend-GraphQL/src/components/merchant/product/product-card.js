@@ -8,13 +8,14 @@ import { useEffect, useState } from 'react'
 import Select from '@mui/material/Select'
 import InputLabel from '@mui/material/InputLabel'
 import OutlinedInput from '@mui/material/OutlinedInput'
+import CircularProgress from '@mui/material/CircularProgress';
 import MenuItem from '@mui/material/MenuItem'
 import Chip from '@mui/material/Chip'
 import VariantPreview from './variant-preview'
 import FormControl from '@mui/material/FormControl'
 import ProductGallary from './product-gallary'
 import { client } from '../../../utils/apollo-client'
-import { GET_PRODUCT_BY_ID } from '../../../GraphQL/Queries/admin/product'
+import { GET_PRODUCT_BY_ID } from '../../../GraphQL/Queries/merchant/product'
 
 const defaultValues = {
   sublist: "",
@@ -55,6 +56,7 @@ const ProductCard = ({ state, actions, createProduct, updateProduct, dispatch, e
 
   const [margin, setMargin] = useState(0)
   const [profit, setProfit] = useState(0)
+  const [fetching, setFetching] = useState(false)
 
   const theme = useTheme()
 
@@ -115,6 +117,8 @@ const ProductCard = ({ state, actions, createProduct, updateProduct, dispatch, e
 
   // fetching data for update
   const fetchDetail = async (id) => {
+    setFetching(true)
+    dispatch(actions.clearState())
     const response = await client.refetchQueries({ include: [{ query: GET_PRODUCT_BY_ID, variables: { id } }] })
     if (response) {
       const { sublist, title, brand, description, mrp, listPrice, cost, colors, sizes, quantity, gstIncluded, images, variants } = { ...response[0].data.productById }
@@ -158,17 +162,38 @@ const ProductCard = ({ state, actions, createProduct, updateProduct, dispatch, e
         gstIncluded
       })
     }
+    setFetching(false)
   }
+
+  const clearForm = () => {
+    reset({ ...defaultValues })
+    dispatch(actions.clearState())
+  }
+
+  useEffect(() => {
+    document.querySelector('#add-product').addEventListener('click', clearForm)
+    return () => {
+      document.querySelector('#add-product')?.removeEventListener("click", clearForm)
+    };
+  })
 
 
   useEffect(() => {
     if (edit) {
       setExpanded('panel1')
-      dispatch(actions.clearState())
       fetchDetail(edit)
     }
     // eslint-disable-next-line
   }, [edit])
+
+
+  if (fetching) {
+    return (
+      <Box sx={{ display: 'grid', placeItems: 'center' }}>
+        <CircularProgress />
+      </Box>
+    )
+  }
 
 
   return (
@@ -446,7 +471,7 @@ const ProductCard = ({ state, actions, createProduct, updateProduct, dispatch, e
               Variants
             </Typography>
             <Grid container spacing={4}>
-              <Grid item xs={12} md={4} sx={{ display: 'grid', placeItems: 'center' }}>
+              <Grid item xs={12} md={4} sx={{ display: 'grid', placeItems: { xs: 'start', md: 'center' } }}>
                 Colors
               </Grid>
               <Grid item xs={12} md={7}>
@@ -501,7 +526,7 @@ const ProductCard = ({ state, actions, createProduct, updateProduct, dispatch, e
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} md={4} sx={{ display: 'grid', placeItems: 'center' }}>
+              <Grid item xs={12} md={4} sx={{ display: 'grid', placeItems: { xs: 'start', md: 'center' } }}>
                 Sizes
               </Grid>
               <Grid item xs={12} md={7}>

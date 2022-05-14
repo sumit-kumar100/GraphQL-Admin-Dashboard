@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AdminDashboardLayout } from '../../../components/admin/dashboard/dashboard-layout'
 import { toast } from 'react-toastify';
 import { useState } from 'react';
-import { useEffect, Fragment } from 'react';
+import { useEffect } from 'react';
 import { Box, Container, Button } from '@mui/material';
 import ProductCard from '../../../components/admin/product/product-card';
 import ProductList from '../../../components/admin/product/prodcut-list'
@@ -64,31 +64,27 @@ const Products = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Button
-                variant="text"
-                color="primary"
-                component="span"
-              >
-                Add Products +
-              </Button>
+              <span id='add-product'>
+                <Button
+                  variant="text"
+                  color="primary"
+                  component="span"
+                >
+                  Add Products +
+                </Button>
+              </span>
             </AccordionSummary>
             <AccordionDetails>
-              {
-                expanded == 'panel1' ?
-                  <>
-                    <ProductCard
-                      state={state}
-                      actions={actions}
-                      edit={edit}
-                      setEdit={setEdit}
-                      setExpanded={setExpanded}
-                      createProduct={createProduct}
-                      updateProduct={updateProduct}
-                      dispatch={dispatch}
-                    />
-                  </>
-                  : (<></>)
-              }
+              <ProductCard
+                state={state}
+                actions={actions}
+                edit={edit}
+                setEdit={setEdit}
+                setExpanded={setExpanded}
+                createProduct={createProduct}
+                updateProduct={updateProduct}
+                dispatch={dispatch}
+              />
             </AccordionDetails>
           </Accordion>
           <Accordion expanded={expanded === 'panel2'} onChange={toggle('panel2')}>
