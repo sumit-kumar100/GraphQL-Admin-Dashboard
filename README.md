@@ -1,4 +1,6 @@
 # GraphQL-Admin-Dashboard
+https://graphql-dashboard-nextjs.herokuapp.com/
+
 GraphQL Admin Dashboard Using Python Django and Next.js
 
 1. Simply add .env file where settings.py file exist in django backend in same directory.
