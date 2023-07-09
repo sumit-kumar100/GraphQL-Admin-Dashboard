@@ -1,5 +1,4 @@
 # GraphQL-Admin-Dashboard
-https://graphql-dashboard-nextjs.herokuapp.com/
 
 GraphQL Admin Dashboard Using Python Django and Next.js
 
